@@ -10,13 +10,15 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use("/user",User);
-app.use(authenticate);
-app.use("/book",Book);
 
 app.get("/",(req,res)=>{
     res.send("HOME PAGE");
 })
+app.use("/user",User);
+app.use(authenticate);
+app.use("/book",Book);
+
+
 
 
 const server =  app.listen(process.env.port,()=>{
