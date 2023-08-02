@@ -14,6 +14,10 @@ app.use("/user",User);
 app.use(authenticate);
 app.use("/book",Book);
 
+app.get("/",(req,res)=>{
+    res.send("HOME PAGE");
+})
+
 
 const server =  app.listen(process.env.port,()=>{
     try {
